@@ -256,6 +256,22 @@ body{font-family:'Heebo',sans-serif;background:var(--cream);color:var(--text);mi
 .opt-badge{font-size:16px;flex-shrink:0;line-height:1.3;}
 
 
+/* ─── ALT DAY BLOCK ─── */
+.alt-day-block{
+  border:2px dashed var(--lake);border-radius:16px;
+  padding:18px 20px 8px;margin-bottom:24px;
+  background:linear-gradient(135deg,#e8f4fb,#d8ecf7);
+}
+.alt-day-block .alt-day-title{
+  font-size:11px;letter-spacing:2px;text-transform:uppercase;
+  color:var(--lake);font-weight:700;margin-bottom:4px;
+}
+.alt-day-block .alt-day-subtitle{
+  font-size:13px;color:var(--mid);margin-bottom:14px;
+}
+.alt-day-block .section-label{color:var(--lake);}
+.alt-day-block .stops{margin-bottom:8px;}
+
 /* ─── ALT HOTELS BOX ─── */
 .alt-hotels{
   background:linear-gradient(135deg,#1a2a1a,#1e301e);
@@ -920,9 +936,65 @@ if ('serviceWorker' in navigator) {
       <a class="hotel-book-btn" href="https://www.booking.com/hotel/at/pongauerhof.html" target="_blank">🏨 הזמנה ב-Booking.com</a>
     </div>
   </div>
-  <div class="options-box">
-    <h4>🌟 אופציות נוספות ביום 6</h4>
-    <div class="opt-item"><span class="opt-badge">🏔️</span><div><strong>סכר קפרון (Kaprun Stausee)</strong> — כ-70 ק"מ מפלכאו, ~שעה ורבע נסיעה. אחד הסכרים המרשימים באלפים — גובה 100 מ', נוף עוצר נשימה לפסגות הקרחוניות. חונים בחינם בחניון Kesselfall ומשם אוטובוס+מעלית שיפועית של Verbund עד למאגרים בגובה 2,000 מ'. מומלץ לשלב עם Zell am See (10 דק' נסיעה מקפרון). <a href="https://www.verbund.com/en/at/tourists/power-plant-tours/kaprun" target="_blank" style="color:#c49a2b;">🔗 פרטים על הסכר</a></div></div>
+  <div class="alt-day-block">
+    <div class="alt-day-title">🔄 אופציה חלופית ליום 6</div>
+    <div class="alt-day-subtitle">במקום E-Bike ופארק חבלים — יום טיול לסכר קפרון + Zell am See</div>
+    <p class="section-label">תחנות היום</p>
+    <div class="stops">
+      <div class="stop">
+        <div class="stop-left"><div class="stop-dot s-start">🚗</div></div>
+        <div class="stop-right">
+          <div class="stop-time">בוקר — יציאה 8:30</div>
+          <div class="stop-card">
+            <h3>פלכאו → קפרון (~שעה ורבע)</h3>
+            <p>~70 ק"מ דרך Radstadt ו-Bischofshofen. נסיעה ציורית בעמקי הפונגאו. חניה חינם בחניון Kesselfall.</p>
+          </div>
+        </div>
+      </div>
+      <div class="stop">
+        <div class="stop-left"><div class="stop-dot s-must">🏔️</div></div>
+        <div class="stop-right">
+          <div class="stop-time">בוקר — 10:00–13:00</div>
+          <div class="stop-card must">
+            <h3>🏔️ סכר קפרון — Kaprun Stausee</h3>
+            <p>אחד הסכרים המרשימים באלפים! מחניון Kesselfall עולים באוטובוס + מעלית שיפועית של Verbund עד למאגרי Mooserboden ו-Wasserfallboden בגובה 2,000 מ'. נוף קרחוני עוצר נשימה, הליכה חינם לאורך הסכר (גובה 100 מ').</p>
+            <div class="tags"><span class="tag tag-gold">🏔️ גובה 2,000 מ'</span><span class="tag tag-green">⏱️ 2.5–3 שעות</span><span class="tag tag-blue">🅿️ חניה חינם</span></div>
+            <a class="attr-link gold" href="https://www.verbund.com/en/at/tourists/power-plant-tours/kaprun" target="_blank">🔗 פרטים + לוחות זמנים</a>
+          </div>
+        </div>
+      </div>
+      <div class="stop">
+        <div class="stop-left"><div class="stop-dot">🍽️</div></div>
+        <div class="stop-right">
+          <div class="stop-time">צהריים — 13:30</div>
+          <div class="stop-card">
+            <h3>ארוחה בעיירת קפרון</h3>
+            <p>עיירה אוסטרית אותנטית עם מסעדות Gasthof מקומיות. המרכז הישן שווה הליכה קצרה.</p>
+          </div>
+        </div>
+      </div>
+      <div class="stop">
+        <div class="stop-left"><div class="stop-dot s-lake">🌊</div></div>
+        <div class="stop-right">
+          <div class="stop-time">אחה"צ — 14:30–17:00</div>
+          <div class="stop-card lake">
+            <h3>🌊 Zell am See — העיירה והאגם</h3>
+            <p>10 דק' נסיעה מקפרון. עיירת נופש ציורית על שפת אגם הרים טורקיז. שחייה חינם בחוף הציבורי, טיול ברחוב הראשי, נוף לפסגת הקיצלשטיין.</p>
+            <div class="tags"><span class="tag tag-blue">🏊 חוף ציבורי חינם</span><span class="tag tag-green">⭐ 4.7</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="stop">
+        <div class="stop-left"><div class="stop-dot s-end">🏠</div></div>
+        <div class="stop-right">
+          <div class="stop-time">ערב — חזרה לפלכאו</div>
+          <div class="stop-card">
+            <h3>חזרה לפלכאו (~שעה)</h3>
+            <p>ארוחת ערב בכפר. מחר יום ארוך לאינסברוק דרך Aqua Dome.</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 

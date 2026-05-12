@@ -1,4 +1,4 @@
-const CACHE = 'austria-trip-v2';
+const CACHE = 'austria-trip-v3';
 
 self.addEventListener('install', e => {
   e.waitUntil(
@@ -20,8 +20,12 @@ self.addEventListener('activate', e => {
 
 self.addEventListener('fetch', e => {
   e.respondWith(
-    caches.match(e.request).then(cached =>
-      cached || fetch(e.request).catch(() => caches.match('./index.html'))
-    )
+    fetch(e.request)
+      .then(res => {
+        const copy = res.clone();
+        caches.open(CACHE).then(cache => cache.put(e.request, copy));
+        return res;
+      })
+      .catch(() => caches.match(e.request))
   );
 });

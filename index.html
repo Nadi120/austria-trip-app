@@ -363,7 +363,7 @@ if ('serviceWorker' in navigator) {
     <button class="tab-btn active" onclick="goTab(0)"><span class="tab-icon">✈️</span>יום 1<span class="tab-lbl">15.7</span></button>
     <button class="tab-btn" onclick="goTab(1)"><span class="tab-icon">🏰</span>יום 2<span class="tab-lbl">16.7</span></button>
     <button class="tab-btn" onclick="goTab(2)"><span class="tab-icon">🛷</span>יום 3<span class="tab-lbl">17.7</span></button>
-    <button class="tab-btn" onclick="goTab(3)"><span class="tab-icon">⛵</span>יום 4<span class="tab-lbl">18.7</span></button>
+    <button class="tab-btn" onclick="goTab(3)"><span class="tab-icon">🏔️</span>יום 4<span class="tab-lbl">18.7</span></button>
     <button class="tab-btn" onclick="goTab(4)"><span class="tab-icon">🏔️</span>יום 5<span class="tab-lbl">19.7</span></button>
     <button class="tab-btn" onclick="goTab(5)"><span class="tab-icon">🚵</span>יום 6<span class="tab-lbl">20.7</span></button>
     <button class="tab-btn" onclick="goTab(6)"><span class="tab-icon">💧</span>יום 7<span class="tab-lbl">21.7</span></button>
@@ -558,13 +558,14 @@ if ('serviceWorker' in navigator) {
       <div class="day-num">03</div>
       <div class="day-meta">
         <div class="date">שישי · 17 יולי 2026</div>
-        <h2>🛷 Keltenblitz → 🏔️ הלשטאט → פלכאו + 🧗 Adventure Park</h2>
+        <h2>🛷 Keltenblitz → ⛵ סנט גיליגן + 🚵 E-Bike → פלכאו</h2>
       </div>
     </div>
     <div class="breadcrumb">
       <span class="node">🛷 Keltenblitz</span><span class="arrow">›</span>
-      <span class="node">🏔️ הלשטאט</span><span class="arrow">›</span>
-      <span class="node">🏘️ פלכאו הגעה</span>
+      <span class="node">🌊 סנט גיליגן</span><span class="arrow">›</span>
+      <span class="node">🚵 E-Bike</span><span class="arrow">›</span>
+      <span class="node">🏘️ פלכאו</span>
     </div>
     <button class="map-toggle" onclick="toggleMap('m2')">📍 מסלול נסיעה יומי</button>
   </div>
@@ -579,8 +580,8 @@ if ('serviceWorker' in navigator) {
       <div class="stop-right">
         <div class="stop-time">בוקר — 9:00</div>
         <div class="stop-card">
-          <h3>יציאה מזלצבורג דרומה (~20 דק')</h3>
-          <p>נסיעה קצרה לדירנברג, פסיעת קפה בדרך.</p>
+          <h3>יציאה מזלצבורג (~20 דק' לדירנברג)</h3>
+          <p>עצירת קפה בדרך לפני הגלישה.</p>
         </div>
       </div>
     </div>
@@ -597,56 +598,54 @@ if ('serviceWorker' in navigator) {
       </div>
     </div>
     <div class="stop">
-      <div class="stop-left"><div class="stop-dot s-must">🏔️</div></div>
+      <div class="stop-left"><div class="stop-dot">🚗</div></div>
       <div class="stop-right">
-        <div class="stop-time">צהריים — 12:00–13:30</div>
+        <div class="stop-time">בוקר — 11:15–12:00</div>
+        <div class="stop-card">
+          <h3>Hallein → סנט גיליגן (~45 דק')</h3>
+          <p>דרך B158 מזרחה דרך Fuschlsee. אחד מהנופות היפים בדרך לאגם.</p>
+        </div>
+      </div>
+    </div>
+    <div class="stop">
+      <div class="stop-left"><div class="stop-dot s-must">🚵</div></div>
+      <div class="stop-right">
+        <div class="stop-time">צהריים — 12:00–15:30</div>
         <div class="stop-card must">
-          <h3>🏔️ הלשטאט — כפר האגם של אונסק"ו</h3>
-          <p>עיירת חוף אגם אגדית ברשימת אונסק"ו — אחד המקומות הציוריים ביותר בעולם. ארוחת צהריים על שפת האגם, סיור ברחוב הראשי הצר, נמל הספינות הציורי וכנסיית St. Michael. מומלץ להגיע לפני 13:00 לפני ההמונים.</p>
-          <div class="tags"><span class="tag tag-blue">🌊 אגם Hallstätter See</span><span class="tag tag-green">🏛️ אונסק"ו</span><span class="tag tag-gold">⏱️ ~1.5 שעות</span></div>
-          <a class="attr-link blue" href="https://www.hallstatt.net/" target="_blank">🔗 hallstatt.net</a>
+          <h3>🚵 E-Bike — וולפגנגזה</h3>
+          <p>השכרת E-Bike בסנטו גילגן ורכיבה לאורך חוף האגם לעיירת St. Wolfgang ובחזרה. ~35 ק"מ עם נוף הרים עצום. ארוחת צהריים ב-St. Wolfgang על המרפסת מעל האגם.</p>
+          <div class="tags"><span class="tag tag-gold">🚴 E-BIKE חובה</span><span class="tag tag-green">⏱️ ~3.5 שעות</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="stop">
+      <div class="stop-left"><div class="stop-dot s-lake">🏊</div></div>
+      <div class="stop-right">
+        <div class="stop-time">אחה"צ — 15:30</div>
+        <div class="stop-card lake">
+          <h3>שחייה קצרה בוולפגנגזה</h3>
+          <p>טבילה מרעננת לפני הנסיעה לפלכאו.</p>
+          <div class="tags"><span class="tag tag-blue">🆓 חינם</span><span class="tag tag-green">💧 מים קרירים וצלולים</span></div>
         </div>
       </div>
     </div>
     <div class="stop">
       <div class="stop-left"><div class="stop-dot">🚗</div></div>
       <div class="stop-right">
-        <div class="stop-time">אחה"צ — 13:30–14:20</div>
+        <div class="stop-time">אחה"צ — 16:00–17:10</div>
         <div class="stop-card">
-          <h3>הלשטאט → פלכאו (~50 דק')</h3>
-          <p>דרך Bad Aussee ו-Radstadt — נוף הרים מדהים לאורך כל הדרך.</p>
+          <h3>סנט גיליגן → פלכאו (~70 דק')</h3>
+          <p>דרך Abtenau דרומה — נוף עמקים אלפיני מרהיב.</p>
         </div>
       </div>
     </div>
     <div class="stop">
-      <div class="stop-left"><div class="stop-dot">🏘️</div></div>
+      <div class="stop-left"><div class="stop-dot s-end">🏘️</div></div>
       <div class="stop-right">
-        <div class="stop-time">אחה"צ — 14:30</div>
+        <div class="stop-time">ערב — 17:10</div>
         <div class="stop-card">
           <h3>הגעה + צ'ק-אין — Hotel Flachauerhof</h3>
-          <p>הנחת מזוודות, קפה בכפר. 4 לילות בבסיס פעולות פלכאו — ברוכים הבאים!</p>
-        </div>
-      </div>
-    </div>
-    <div class="stop">
-      <div class="stop-left"><div class="stop-dot s-must">🧗</div></div>
-      <div class="stop-right">
-        <div class="stop-time">אחה"צ — 15:00–17:30</div>
-        <div class="stop-card must">
-          <h3>🧗 Adventure Park — Via Ferrata + חבלי סלע</h3>
-          <p>פארק הרפתקאות ייחודי של ACS Alpincenter — גשרי חבלים ומסלולי via ferrata עד גובה 40 מ' בסלע! שיא: טיפוס רשת עכביש של 20 מ' בצוק וירידה מפחידה במיוחד. €44 למבוגר · מגיל 12+. ⏱️ 2.5 שעות</p>
-          <div class="tags"><span class="tag tag-gold">🧗 אדרנלין!</span><span class="tag tag-green">⏱️ 2.5 שעות</span><span class="tag tag-blue">📍 Hermann-Maier-Platz 1, Flachau</span></div>
-          <a class="attr-link gold" href="https://www.acs-alpincenter.com/en/summer/adventure-park.htm" target="_blank">🔗 ACS Adventure Park — פרטים + הזמנה</a>
-        </div>
-      </div>
-    </div>
-    <div class="stop">
-      <div class="stop-left"><div class="stop-dot s-end">🌄</div></div>
-      <div class="stop-right">
-        <div class="stop-time">ערב</div>
-        <div class="stop-card">
-          <h3>ארוחה ב-Almhütte מקומית</h3>
-          <p>פלכאו מלאה בצריפי הרים (Almhütten) עם מאכלי Kasnocken, Kaiserschmarrn ובירת חבית. ברוכים הבאים לפלכאו!</p>
+          <p>הנחת מזוודות. ארוחת ערב ב-Almhütte מקומית עם Kasnocken, Kaiserschmarrn ובירת חבית. ברוכים הבאים לפלכאו!</p>
         </div>
       </div>
     </div>
@@ -663,20 +662,19 @@ if ('serviceWorker' in navigator) {
 
 <!-- ══════ DAY 4 ══════ -->
 <div class="day-panel" id="d3">
-  <div class="day-hdr" data-bg="⛵">
+  <div class="day-hdr" data-bg="🏔️">
     <div class="day-hdr-top">
       <div class="day-num">04</div>
       <div class="day-meta">
         <div class="date">שבת · 18 יולי 2026</div>
-        <h2>⛵ טיול כוכב: סנט גיליגן + 🚵 E-Bike וולפגנגזה</h2>
+        <h2>🏔️ הלשטאט + 🧗 Adventure Park — פלכאו</h2>
       </div>
     </div>
     <div class="breadcrumb">
       <span class="node">🏘️ פלכאו</span><span class="arrow">›</span>
-      <span class="node">🌊 St. Gilgen</span><span class="arrow">›</span>
-      <span class="node">🚵 E-Bike</span><span class="arrow">›</span>
-      <span class="node">🚠 Schafberg</span><span class="arrow">›</span>
-      <span class="node">🏘️ פלכאו</span>
+      <span class="node">🏔️ הלשטאט</span><span class="arrow">›</span>
+      <span class="node">🏘️ פלכאו</span><span class="arrow">›</span>
+      <span class="node">🧗 Adventure Park</span>
     </div>
     <button class="map-toggle" onclick="toggleMap('m3')">📍 מסלול נסיעה יומי</button>
   </div>
@@ -689,65 +687,64 @@ if ('serviceWorker' in navigator) {
     <div class="stop">
       <div class="stop-left"><div class="stop-dot s-start">🚗</div></div>
       <div class="stop-right">
-        <div class="stop-time">בוקר — 8:45</div>
+        <div class="stop-time">בוקר — 8:30</div>
         <div class="stop-card">
-          <h3>פלכאו → סנט גיליגן (~75 דקות)</h3>
-          <p>~80 ק"מ דרך Bad Ischl ואגם וולפגנגזה. נוף הרים מדהים לאורך הדרך.</p>
+          <h3>פלכאו → הלשטאט (~65 דקות)</h3>
+          <p>דרך Radstadt ו-Abtenau צפונה. מומלץ להגיע לפני 10:00 לפני ההמונים.</p>
         </div>
       </div>
     </div>
     <div class="stop">
-      <div class="stop-left"><div class="stop-dot s-must">🚵</div></div>
+      <div class="stop-left"><div class="stop-dot s-must">🏔️</div></div>
       <div class="stop-right">
-        <div class="stop-time">בוקר — 10:00–13:30</div>
+        <div class="stop-time">בוקר — 9:40–12:30</div>
         <div class="stop-card must">
-          <h3>🚵 E-Bike — וולפגנגזה</h3>
-          <p>השכרת E-Bike בסנטו גילגן ורכיבה מושלמת לאורך חוף האגם, דרך כפרים, לעיירת St. Wolfgang ובחזרה. ~35 ק"מ עם נוף הרים עצום.</p>
-          <div class="tags"><span class="tag tag-gold">🚴 E-BIKE חובה</span><span class="tag tag-green">⏱️ 3–4 שעות</span></div>
+          <h3>🏔️ הלשטאט — כפר האגם של אונסק"ו</h3>
+          <p>עיירת חוף אגם אגדית ברשימת אונסק"ו — אחד המקומות הציוריים ביותר בעולם. סיור ברחוב הראשי הצר, נמל הספינות הציורי, כנסיית St. Michael, בית הקברות הנודע. הגיעו מוקדם לפני ההמונים!</p>
+          <div class="tags"><span class="tag tag-blue">🌊 אגם Hallstätter See</span><span class="tag tag-green">🏛️ אונסק"ו</span><span class="tag tag-gold">⏱️ ~2.5 שעות</span></div>
+          <a class="attr-link blue" href="https://www.hallstatt.net/" target="_blank">🔗 hallstatt.net</a>
         </div>
       </div>
     </div>
     <div class="stop">
       <div class="stop-left"><div class="stop-dot">🍽️</div></div>
       <div class="stop-right">
-        <div class="stop-time">צהריים — 13:30</div>
+        <div class="stop-time">צהריים — 12:30</div>
         <div class="stop-card">
-          <h3>ארוחה ב-St. Wolfgang</h3>
-          <p>עיירה ציורית על שפת האגם עם מסעדות Gasthof מקומיות. שווה לשבת על המרפסת עם נוף לאגם.</p>
-          <a class="attr-link blue" href="https://www.google.com/maps/search/restaurants+St+Wolfgang+Wolfgangsee/@47.7380,13.4510,14z" target="_blank">📍 מסעדות St. Wolfgang</a>
+          <h3>ארוחה בהלשטאט על שפת האגם</h3>
+          <p>מסעדות Gasthof ציוריות עם נוף ישיר לאגם. מאכלי דגים מקומיים.</p>
         </div>
       </div>
     </div>
     <div class="stop">
-      <div class="stop-left"><div class="stop-dot s-must">🚠</div></div>
+      <div class="stop-left"><div class="stop-dot">🚗</div></div>
       <div class="stop-right">
-        <div class="stop-time">אחה"צ — 14:30–17:00</div>
+        <div class="stop-time">אחה"צ — 13:30–14:35</div>
+        <div class="stop-card">
+          <h3>חזרה לפלכאו (~65 דקות)</h3>
+          <p>נסיעה חזרה דרך Abtenau ו-Radstadt.</p>
+        </div>
+      </div>
+    </div>
+    <div class="stop">
+      <div class="stop-left"><div class="stop-dot s-must">🧗</div></div>
+      <div class="stop-right">
+        <div class="stop-time">אחה"צ — 15:00–17:30</div>
         <div class="stop-card must">
-          <h3>🚠 רכבת קיטור Schafberg (1,783 מ') — אופציה!</h3>
-          <p>רכבת קיטור היסטורית מ-1893 עולה לפסגת Schafberg. נוף פנורמי לוולפגנגזה ועשרות אגמי הסלקאמרגוט — מהנופים הטובים ביותר באוסטריה. ⏱️ ~2.5 שעות הלוך-שוב. <strong>בחרו: E-Bike יום שלם או E-Bike קצר + שפיצברג.</strong></p>
-          <div class="tags"><span class="tag tag-gold">🚠 חובה לאוהבי נוף!</span><span class="tag tag-blue">הזמינו מראש בקיץ</span></div>
-          <a class="attr-link gold" href="https://www.schafbergbahn.at/en/" target="_blank">🔗 Schafbergbahn — כרטיסים</a>
+          <h3>🧗 Adventure Park — Via Ferrata + חבלי סלע</h3>
+          <p>פארק הרפתקאות ייחודי של ACS Alpincenter — גשרי חבלים ומסלולי via ferrata עד גובה 40 מ' בסלע! שיא: טיפוס רשת עכביש של 20 מ' בצוק. €44 למבוגר · מגיל 12+. ⏱️ 2.5 שעות</p>
+          <div class="tags"><span class="tag tag-gold">🧗 אדרנלין!</span><span class="tag tag-green">⏱️ 2.5 שעות</span><span class="tag tag-blue">📍 Hermann-Maier-Platz 1, Flachau</span></div>
+          <a class="attr-link gold" href="https://www.acs-alpincenter.com/en/summer/adventure-park.htm" target="_blank">🔗 ACS Adventure Park — פרטים + הזמנה</a>
         </div>
       </div>
     </div>
     <div class="stop">
-      <div class="stop-left"><div class="stop-dot s-lake">🏊</div></div>
+      <div class="stop-left"><div class="stop-dot s-end">🌄</div></div>
       <div class="stop-right">
-        <div class="stop-time">אחה"צ מאוחר</div>
-        <div class="stop-card lake">
-          <h3>שחייה בוולפגנגזה</h3>
-          <p>שחייה בחוף הציבורי של St. Gilgen — מים קרירים וצלולים. מנוחה לפני הנסיעה חזרה.</p>
-          <div class="tags"><span class="tag tag-blue">🆓 חינם</span><span class="tag tag-green">💧 מים קרירים וצלולים</span></div>
-        </div>
-      </div>
-    </div>
-    <div class="stop">
-      <div class="stop-left"><div class="stop-dot s-end">🚗</div></div>
-      <div class="stop-right">
-        <div class="stop-time">ערב — 17:30</div>
+        <div class="stop-time">ערב</div>
         <div class="stop-card">
-          <h3>חזרה לפלכאו (~75 דקות)</h3>
-          <p>נסיעה חזרה דרך Bad Ischl. ארוחת ערב בכפר פלכאו.</p>
+          <h3>ארוחת ערב בפלכאו</h3>
+          <p>יום מלא — תרבות בבוקר, אדרנלין אחר הצהריים!</p>
         </div>
       </div>
     </div>
@@ -1313,8 +1310,8 @@ if ('serviceWorker' in navigator) {
       <tbody>
         <tr><td class="ov-day">1</td><td>15.7</td><td>✈️ נחיתה מינכן → זלצבורג</td><td>זלצבורג</td></tr>
         <tr><td class="ov-day">2</td><td>16.7</td><td>🏰 מבצר + ⛏️ מכרה מלח + 🌊 נקיק</td><td>זלצבורג</td></tr>
-        <tr><td class="ov-day">3</td><td>17.7</td><td><span class="must-tag">🛷 Keltenblitz</span> + 🏔️ הלשטאט → פלכאו + 🧗 Adventure Park</td><td>פלכאו</td></tr>
-        <tr><td class="ov-day">4</td><td>18.7</td><td>⛵ יום כוכב: <span class="must-tag">🚵 E-Bike וולפגנגזה</span> + 🚠 שפיצברג</td><td>פלכאו</td></tr>
+        <tr><td class="ov-day">3</td><td>17.7</td><td><span class="must-tag">🛷 Keltenblitz</span> + ⛵ E-Bike סנט גיליגן → פלכאו</td><td>פלכאו</td></tr>
+        <tr><td class="ov-day">4</td><td>18.7</td><td>🏔️ יום כוכב: <span class="must-tag">הלשטאט UNESCO</span> + 🧗 Adventure Park ACS</td><td>פלכאו</td></tr>
         <tr><td class="ov-day">5</td><td>19.7</td><td>⛵ יום כוכב: <span class="must-tag">🏔️ סכר קפרון</span> + 🌊 Zell am See</td><td>פלכאו</td></tr>
         <tr><td class="ov-day">6</td><td>20.7</td><td>🚵 E-Bike הרים + 🏊 Badesee + <span class="must-tag">🌲 פארק חבלים ACS</span></td><td>פלכאו</td></tr>
         <tr><td class="ov-day">7</td><td>21.7</td><td><span class="must-tag">💧 Aqua Dome</span> לנגנפלד → 🏔️ הגעה אינסברוק</td><td>אינסברוק</td></tr>
@@ -1365,17 +1362,18 @@ const ROUTES = {
        [47.5400,13.2100],[47.5900,13.1800],[47.6500,13.1300],[47.7100,13.0800],
        [47.7700,13.0600],[47.8095,13.0550]],
 
-  // יום 3: זלצבורג → Hallein/Dürrnberg → B159 → Golling → Abtenau → הלשטאט → Bad Aussee → Radstadt → פלכאו
-  m2: [[47.8095,13.0550],[47.7500,13.0700],[47.6850,13.0970],[47.6400,13.1100],
-       [47.5940,13.1610],[47.5600,13.2400],[47.5620,13.4500],
-       [47.5620,13.6490],[47.5500,13.7200],[47.5200,13.7500],
-       [47.4800,13.6800],[47.4400,13.5800],[47.3870,13.4610],[47.3390,13.3890]],
+  // יום 3: זלצבורג → Keltenblitz/Dürrnberg → B158 → Fuschlsee → St. Gilgen → Abtenau → פלכאו
+  m2: [[47.8095,13.0550],[47.7500,13.0700],[47.6850,13.0970],
+       [47.7200,13.1000],[47.7800,13.1500],[47.8000,13.2200],
+       [47.7900,13.2900],[47.7680,13.3650],
+       [47.7380,13.4000],[47.7000,13.4000],
+       [47.6500,13.3800],[47.5700,13.3500],[47.5100,13.3500],
+       [47.4500,13.3700],[47.3870,13.4610],[47.3390,13.3890]],
 
-  // יום 4: פלכאו → Bad Ischl → St. Gilgen → St. Wolfgang → St. Gilgen → Bad Ischl → פלכאו
-  m3: [[47.3390,13.3890],[47.3870,13.4610],[47.4800,13.4000],[47.5600,13.3500],
-       [47.6200,13.3300],[47.7120,13.6220],[47.7400,13.4900],
-       [47.7680,13.3650],[47.7380,13.4510],[47.7680,13.3650],
-       [47.7120,13.6220],[47.6200,13.3300],[47.5600,13.3500],[47.4800,13.4000],
+  // יום 4: פלכאו → Radstadt → הלשטאט → חזרה פלכאו
+  m3: [[47.3390,13.3890],[47.3870,13.4610],[47.4300,13.5200],
+       [47.4800,13.5800],[47.5300,13.6200],[47.5620,13.6490],
+       [47.5300,13.6200],[47.4800,13.5800],[47.4300,13.5200],
        [47.3870,13.4610],[47.3390,13.3890]],
 
   // יום 5: פלכאו → Radstadt → Bischofshofen → קפרון → Zell am See → חזרה
@@ -1443,8 +1441,8 @@ const ROUTES = {
 const STOPS = {
   m0: [[48.3537,11.7750,'שדה התעופה מינכן','✈️','#1f5233'],[47.8095,13.0550,'זלצבורג','🏨','#8b2020']],
   m1: [[47.7950,13.0470,'מבצר Hohensalzburg','🏰','#1f5233'],[47.6890,13.1010,'Salzwelten מכרה מלח','⛏️','#c49a2b'],[47.5230,13.2310,'Liechtensteinklamm','🌊','#2e7d9e'],[47.8095,13.0550,'זלצבורג','🏨','#8b2020']],
-  m2: [[47.8095,13.0550,'זלצבורג','🚗','#1f5233'],[47.6850,13.0970,'Keltenblitz — Dürrnberg','🛷','#c49a2b'],[47.5620,13.6490,'הלשטאט','🏔️','#2e7d9e'],[47.3390,13.3890,'פלכאו','🏨','#8b2020']],
-  m3: [[47.3390,13.3890,'פלכאו','🚗','#1f5233'],[47.7680,13.3650,'St. Gilgen','🌊','#2e7d9e'],[47.7380,13.4510,'St. Wolfgang','☕','#c49a2b'],[47.7520,13.4440,'Schafberg רכבל','🚠','#2e7d9e'],[47.3390,13.3890,'חזרה פלכאו','🏨','#8b2020']],
+  m2: [[47.8095,13.0550,'זלצבורג','🚗','#1f5233'],[47.6850,13.0970,'Keltenblitz — Dürrnberg','🛷','#c49a2b'],[47.7680,13.3650,'St. Gilgen — Wolfgangsee','⛵','#2e7d9e'],[47.3390,13.3890,'פלכאו','🏨','#8b2020']],
+  m3: [[47.3390,13.3890,'פלכאו','🚗','#1f5233'],[47.5620,13.6490,'הלשטאט UNESCO','🏔️','#2e7d9e'],[47.3390,13.3890,'ACS Adventure Park','🧗','#c49a2b']],
   m4: [[47.3390,13.3890,'פלכאו','🚗','#1f5233'],[47.2710,12.7640,'סכר קפרון','🏔️','#c49a2b'],[47.3250,12.7980,'Zell am See','🌊','#2e7d9e'],[47.3390,13.3890,'חזרה פלכאו','🏘️','#8b2020']],
   m5day2: [[47.3390,13.3890,'פלכאו','🏘️','#1f5233'],[47.3500,13.3700,'מסלול E-Bike','🚵','#c49a2b'],[47.3390,13.3800,'Badesee Flachauwinkl','🏊','#2e7d9e']],
   m5: [[47.3390,13.3890,'פלכאו','🚗','#1f5233'],[47.0750,10.9650,'Aqua Dome לנגנפלד','💧','#2e7d9e'],[47.2692,11.4041,'אינסברוק','🏔️','#8b2020']],

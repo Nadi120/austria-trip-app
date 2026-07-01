@@ -334,6 +334,20 @@ body{font-family:'Heebo',sans-serif;background:var(--cream);color:var(--text);mi
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('sw.js');
 }
+let _installPrompt = null;
+window.addEventListener('beforeinstallprompt', e => {
+  e.preventDefault();
+  _installPrompt = e;
+  document.getElementById('installBtn').style.display = 'flex';
+});
+window.addEventListener('appinstalled', () => {
+  document.getElementById('installBtn').style.display = 'none';
+});
+function installApp() {
+  if (!_installPrompt) return;
+  _installPrompt.prompt();
+  _installPrompt.userChoice.then(() => { _installPrompt = null; });
+}
 </script>
 </head>
 <body>
@@ -350,6 +364,13 @@ if ('serviceWorker' in navigator) {
     <a class="pill pill-dark" href="https://www.flachau.com/en/summer/e-mountain-biking/" target="_blank"><span class="pill-icon">🚵</span> E-Bike פלכאו</a>
     <a class="pill pill-dark" href="https://www.salzwelten.at/en/" target="_blank"><span class="pill-icon">⛏️</span> מכרה מלח</a>
   </div>
+</div>
+
+<!-- INSTALL BUTTON -->
+<div id="installBtn" style="display:none;background:#1a3a2a;padding:8px 16px;justify-content:center;">
+  <button onclick="installApp()" style="display:flex;align-items:center;gap:8px;background:var(--gold);color:var(--pine);border:none;font-family:'Heebo',sans-serif;font-size:13px;font-weight:800;padding:10px 24px;border-radius:24px;cursor:pointer;letter-spacing:0.3px;">
+    📲 התקן כאפליקציה
+  </button>
 </div>
 
 <!-- OVERVIEW STRIP -->
@@ -855,6 +876,7 @@ if ('serviceWorker' in navigator) {
       <div class="day-meta">
         <div class="date">שני · 20 יולי 2026</div>
         <h2>🚵 E-Bike הרים + 🌲 פארק חבלים + Badesee — פלכאו יום 4</h2>
+        <div style="font-size:12px;color:var(--gold-lt);margin-top:4px;font-weight:600">🌉 אופציה: Stubnerkogel Hängebrücke במקום E-Bike</div>
       </div>
     </div>
     <div class="breadcrumb">
@@ -868,7 +890,19 @@ if ('serviceWorker' in navigator) {
     <div class="leaflet-map" id="lmap_m5day2"></div>
   </div>
 
-  <p class="section-label">תחנות היום</p>
+  <div class="options-box">
+    <h4>🔀 שתי אפשרויות ליום — בחרו!</h4>
+    <div class="opt-item">
+      <span class="opt-badge">🅰️</span>
+      <div><strong>יום שלם בפלכאו</strong> — E-Bike הרים (4–6 שעות) + Badesee + פארק חבלים ACS. ללא נסיעה, יום רגוע יחסית.</div>
+    </div>
+    <div class="opt-item">
+      <span class="opt-badge">🅱️</span>
+      <div><strong>Stubnerkogel + פארק חבלים</strong> — בוקר: גשר תלוי Bad Gastein (40 דק' מפלכאו). אחה"צ: חזרה לפלכאו לאגם + פארק חבלים. מדלגים על E-Bike.</div>
+    </div>
+  </div>
+
+  <p class="section-label">אפשרות א׳ — יום שלם בפלכאו</p>
   <div class="stops">
     <div class="stop">
       <div class="stop-left"><div class="stop-dot s-must">🚵</div></div>
@@ -926,6 +960,81 @@ if ('serviceWorker' in navigator) {
       </div>
     </div>
   </div>
+  <div class="alt-day-block">
+    <div class="alt-day-title">🅱️ אופציה חלופית — 🌉 Stubnerkogel Hängebrücke</div>
+    <div class="alt-day-subtitle">במקום E-Bike: בוקר ב-Bad Gastein (40 דק' מפלכאו), אחה"צ בפלכאו כרגיל</div>
+    <p class="section-label">לוז מוצע</p>
+    <div class="stops">
+      <div class="stop">
+        <div class="stop-left"><div class="stop-dot s-start">🚗</div></div>
+        <div class="stop-right">
+          <div class="stop-time">בוקר — 7:30</div>
+          <div class="stop-card">
+            <h3>פלכאו → Bad Gastein (~40 דקות)</h3>
+            <p>דרך Radstadt ו-Bischofshofen דרומה לעמק גאשטיין.</p>
+          </div>
+        </div>
+      </div>
+      <div class="stop">
+        <div class="stop-left"><div class="stop-dot s-must">🌉</div></div>
+        <div class="stop-right">
+          <div class="stop-time">בוקר — 8:30–11:00</div>
+          <div class="stop-card must">
+            <h3>🌉 Stubnerkogel Hängebrücke — גשר תלוי</h3>
+            <p>רכבל Stubnerkogelbahn עד פסגת Stubnerkogel (2,246 מ'). גשר תלוי 120 מ' עם נוף עוצר נשימה לעמק גאשטיין. אחד הגשרים הגבוהים באוסטריה. ⭐ 4.7</p>
+            <div class="tags">
+              <span class="tag tag-gold">🌉 120 מ' גשר</span>
+              <span class="tag tag-green">⛰️ 2,246 מ'</span>
+              <span class="tag tag-blue">⏱️ ~2.5 שעות</span>
+              <span class="tag tag-red">🎟️ ~€30/אדם</span>
+            </div>
+            <a class="attr-link gold" href="https://www.stubnerkogel.at/" target="_blank">🔗 stubnerkogel.at</a>
+          </div>
+        </div>
+      </div>
+      <div class="stop">
+        <div class="stop-left"><div class="stop-dot">🚗</div></div>
+        <div class="stop-right">
+          <div class="stop-time">צהריים — 11:00–12:00</div>
+          <div class="stop-card">
+            <h3>Bad Gastein → פלכאו (~40 דקות)</h3>
+            <p>חזרה לפלכאו. ארוחת צהריים בכפר.</p>
+          </div>
+        </div>
+      </div>
+      <div class="stop">
+        <div class="stop-left"><div class="stop-dot s-lake">🏊</div></div>
+        <div class="stop-right">
+          <div class="stop-time">אחה"צ — 13:30</div>
+          <div class="stop-card lake">
+            <h3>Badesee Flachauwinkl — כרגיל</h3>
+            <p>שחייה באגם הטבעי הצלול לפני הפארק.</p>
+            <div class="tags"><span class="tag tag-blue">🆓 חינם</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="stop">
+        <div class="stop-left"><div class="stop-dot s-must">🌲</div></div>
+        <div class="stop-right">
+          <div class="stop-time">אחה"צ — 14:30</div>
+          <div class="stop-card must">
+            <h3>🌲 ACS Alpincenter — פארק חבלים — כרגיל</h3>
+            <p>פארק חבלים + Flying Fox 150 מ' מעל האגם — ממש ליד ה-Badesee.</p>
+            <a class="attr-link gold" href="https://www.acs-alpincenter.com/en/summer/high-rope-course.htm" target="_blank">🎟️ פרטים + הזמנה</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tips">
+      <h4>💡 טיפים ל-Stubnerkogel</h4>
+      <ul>
+        <li>הרכבל פועל מ-8:30 — צאו מפלכאו ב-7:30 להימנע מתורים</li>
+        <li>לבשו שכבות — בפסגה יכול להיות קר גם ביולי</li>
+        <li>אין צורך להזמין מראש, אבל עדיף להגיע מוקדם</li>
+      </ul>
+    </div>
+  </div>
+
   <div class="sleep-card">
     <div class="sleep-icon">🛏️</div>
     <div class="sleep-info">
@@ -1007,9 +1116,9 @@ if ('serviceWorker' in navigator) {
   <div class="sleep-card">
     <div class="sleep-icon">🛏️</div>
     <div class="sleep-info">
-      <h4>Boutique Hotel Zach — אינסברוק · לילה אחד</h4>
-      <p>בלב העיר העתיקה · בוטיק אינטימי עם אווירה מיוחדת</p>
-      <a class="hotel-book-btn" href="https://www.booking.com/hotel/at/zach.html" target="_blank">🏨 הזמנה ב-Booking.com</a>
+      <h4>Hotel Sailer — אינסברוק · לילה אחד</h4>
+      <p>בלב העיר העתיקה · מלון בוטיק מרכזי</p>
+      <a class="hotel-book-btn" href="https://www.booking.com/hotel/at/sailer.html" target="_blank">🏨 הזמנה ב-Booking.com</a>
     </div>
   </div>
   <div class="alt-hotels">
